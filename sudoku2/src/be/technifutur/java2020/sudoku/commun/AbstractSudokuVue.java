@@ -44,6 +44,7 @@ public abstract class AbstractSudokuVue {
 
         }
 
+
         System.out.printf(getGrilleVide(), tabValue);
 
 
