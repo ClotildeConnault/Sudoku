@@ -3,8 +3,10 @@ package be.technifutur.java2020.sudoku.commun;
 public class Possibilities {
     private int data;
 
-    public Possibilities(){
-
+    public Possibilities(int... initialValues){
+        for (int val : initialValues) {
+            add(val);
+        }
     }
 
     public void setData(int val){
@@ -51,12 +53,12 @@ public class Possibilities {
 
     public int size(){
 
-        return 9 - Integer.bitCount(data);
+        return Integer.bitCount(data);
     }
 
     public static void main(String[] args) {
-        Possibilities poss = new Possibilities();
-        poss.setData(0b100111010);
+        Possibilities poss = new Possibilities(1, 3, 4, 7);
+        //poss.setData(0b100111010);
 
         System.out.println("add");
         System.out.println(poss.add(3));
