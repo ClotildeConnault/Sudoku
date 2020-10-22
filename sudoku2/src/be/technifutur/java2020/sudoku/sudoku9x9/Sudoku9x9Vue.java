@@ -1,5 +1,6 @@
 package be.technifutur.java2020.sudoku.sudoku9x9;
 
+import be.technifutur.java2020.sudoku.commun.AbstractSudokuModele;
 import be.technifutur.java2020.sudoku.commun.AbstractSudokuVue;
 import be.technifutur.java2020.sudoku.sudoku4x4.Sudoku4x4Modele;
 
@@ -23,16 +24,43 @@ public class Sudoku9x9Vue extends AbstractSudokuVue {
                 "| . . . | . . . | . . . |\n" +
                 "+-------+-------+-------+\n" ;
 
+    public Sudoku9x9Vue(int taille) {
+        super(taille);
+    }
 
 
-
-        public void setModele(Sudoku9x9Modele modele) {
+    public void setModele(Sudoku9x9Modele modele) {
 
             this.modele = modele;
 
         }
 
-        public void afficherGrilleVide(){
+    @Override
+    public String getGrilleVide() {
+        return null;
+    }
+
+    @Override
+    public void setGrilleVide(String grilleVide) {
+
+    }
+
+    @Override
+    public void setModele(AbstractSudokuModele modele) {
+
+    }
+
+    @Override
+    public AbstractSudokuModele getModele() {
+        return null;
+    }
+
+    @Override
+    public void afficherGrille(AbstractSudokuModele modele) {
+
+    }
+
+    public void afficherGrilleVide(){
 
             internalAfficheGrille(new Sudoku9x9Modele());
 
@@ -71,7 +99,7 @@ public class Sudoku9x9Vue extends AbstractSudokuVue {
 
 
 
-            Sudoku9x9Vue vue = new Sudoku9x9Vue();
+            Sudoku9x9Vue vue = new Sudoku9x9Vue(9);
             Sudoku9x9Modele modele = new Sudoku9x9Modele();
 
             vue.setModele(modele);
