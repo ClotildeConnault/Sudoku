@@ -38,15 +38,8 @@ public class Possibilities {
     }
 
     public int size(){
-        int possibilities = 0;
 
-        for(int i=1; i <= 9; i ++){
-            if ((data & (1<<i-1)) == 0){
-                possibilities ++;
-            }
-        }
-
-        return possibilities;
+        return 9 - Integer.bitCount(data);
     }
 
 
