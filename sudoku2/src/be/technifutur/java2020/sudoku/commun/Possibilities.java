@@ -7,7 +7,7 @@ public class Possibilities {
         boolean change = false;
         int updatedData = data | (1<<val-1);
 
-        if ((data ^ updatedData) != 0){
+        if (data != updatedData){
             data = updatedData;
             change = true;
         }
